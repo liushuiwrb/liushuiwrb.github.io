@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>css3学习</title>
+	<style>
+		.cont{
+			padding: 0;
+			margin: 0;
+			width: 1200px;
+			height: 800px;
+			background-color: blueviolet;
+			margin: 0 auto;
+			padding-top: 200px;
+			position: relative;
+		}
+		.cont .items{
+			background-color: yellow;
+			padding-bottom: 10px;
+			padding-top: 10px;
+			width: 1000px;
+			height: 600px;
+			margin: 0 auto;
+			overflow: auto;
+		}
+		.clearfix::after{
+			content:"";
+			display:"block";
+			clear:"both";
+		}
+		.items > div{
+			width: 150px;
+			height: 150px;
+			line-height: 150px;
+			background-color: red;
+			text-align: center;
+			margin-top: 35px;
+			margin-left: 35px;
+			float: left;
+			font-size: 30px;
+			font-weight: 2em;
+			font-family: 'Courier New', Courier, monospace;
+			font-style: italic;
+			box-shadow: 5px 5px 10px black;
+			cursor: pointer;
+			transition: all 1s
+		}
+		.items div:hover{
+			background-color: blue;
+			color: white;
+		}
+		.items div:nth-of-type(1):hover{
+			transform: translateX(360px) translateY(500px) rotate(360deg) scale(1.4) rotateY(360deg);
+		}
+		.items div:nth-of-type(2):hover{
+			transform: rotateX(540deg) rotateY(180deg) rotateZ(180deg) translate(-150px);
+		}
+		.items div:nth-of-type(3):hover{
+			transform: scaleX(1.7) translate(100px) scaleY(0.8) rotateX(340deg) rotateY(48deg);
+		}
+		.items div:nth-of-type(4){
+			animation: myname 3s linear infinite;
+		}
+		.items div:nth-of-type(5){
+			animation: myname 3s steps(100) infinite;
+		}
+		.items div:nth-of-type(6)::after{
+			content: "美术";
+		}
+		.items div:nth-of-type(6):hover::after{
+			content: "生物";
+		}
+		.items div:nth-of-type(6):hover{
+			transform: translateX(100px) rotateX(360deg) scale(1.9);
+		}
+		.cont .hua{
+			width: 350px;
+			height: 150px;
+			line-height: 150px;
+			background-color: red;
+			text-align: center;
+			position: absolute;
+			left: 410px;
+			top: 25px;
+			font-size: 50px;
+			font-weight: 2em;
+			font-style: italic;
+			font-family: 'Courier New', Courier, monospace;
+			box-shadow: 5px 5px 5px black;
+			border-radius: 10px;
+		}
+		@keyframes myname{
+			0%{
+				
+			}
+			45%{
+				transform: translateX(200px) rotateY(360deg) rotateX(360deg) ;
+			}
+			75%{
+				transform: translateY(300px) rotateX(270deg) rotateY(190deg);
+				background-color: blue;
+			}
+			85%{
+				transform: translateX(-400px) rotateX(360deg) rotateZ(360deg);
+				background-color: white;
+			}
+			100%{
+				
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="cont">
+		<div class="items clearfix">
+			<div class="shu">数学</div>
+			<div class="yu">语文</div>
+			<div class="ying">英语</div>
+			<div class="zhen">政治</div>
+			<div class="li">历史</div>
+			<div class="sheng"></div>
+			<div class="di">地理</div>
+			<div class="huan">化学</div>
+			<div class="wu">物理</div>
+		</div>
+		<div class="hua">考试科目</div>
+	</div>
+</body>
+</html>
